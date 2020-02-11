@@ -36,7 +36,7 @@ for i in range(len(pokemonNamesPre)):
 		del pokemonNumbers[i -deleted]
 		deleted += 1
 		
-def text_with_newlines(elem):
+def text_with_processing(elem):
     text = ''
     for e in elem.descendants:
         if isinstance(e, str):
@@ -44,6 +44,10 @@ def text_with_newlines(elem):
 			
         elif e.name == 'br' or e.name == 'p':
             text += ', '
+
+        elif e.name == 'sup':
+            text+= '^'
+
     return text
 
 
@@ -68,10 +72,10 @@ for i in pokemonLinks:
 				if(str(k.get("class")) == "['roundy']"):
 					#print(k.parent.parent.parent.parent.find("a").get("title"))
 					#print(k.get_text())
-					#print(text_with_newlines(k))
+					#print(text_with_processing(k))
 					pokemonCatchGames.append(k.parent.parent.parent.parent.find("a").get("title"))
 					#pokemonCatchMethods.append(k.get_text())
-					pokemonCatchMethods.append(text_with_newlines(k))
+					pokemonCatchMethods.append(text_with_processing(k))
 	
 					
 	dfTemp = pd.DataFrame({"Game to Catch in":pokemonCatchGames, "Catch Methods":pokemonCatchMethods})		

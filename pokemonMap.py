@@ -63,9 +63,9 @@ pokemonNames = []
 pokemonGames = []
 catchMethods = []
 for method in pokemonCatchMethods:
-    pokemonNames.append(method[2])
+    pokemonNames.append(method[0])
     pokemonGames.append(method[1])
-    catchMethods.append(method[0])
+    catchMethods.append(method[2])
 
 
 

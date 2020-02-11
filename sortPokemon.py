@@ -6,10 +6,12 @@ import os
 mainlineGames = ["Pokémon Sword", "Pokémon Shield", "Pokémon Ultra Sun", "Pokémon Ultra Moon",
  "Pokémon Sun", "Pokémon Moon", "Pokémon X", "Pokémon Y", "Pokémon Omega Ruby", "Pokémon Alpha Sapphire",
  "Pokémon Black 2", "Pokémon White 2", "Pokémon Black", "Pokémon White", "Pokémon HeartGold",
- "Pokémon SoulSilver", "Pokémon Diamond", "Pokémon Pearl", "Pokémon Platinum"]
+ "Pokémon SoulSilver", "Pokémon Diamond", "Pokémon Pearl", "Pokémon Platinum", "Pokémon Sword and Shield",
+"Pokémon Ultra Sun and Ultra Moon", "Pokémon Omega Ruby and Alpha Sapphire", "Pokémon X and Y", "Pokémon Black 2 and White 2",
+"Pokémon Black and White", "Pokémon HeartGold and SoulSilver", "Pokémon Diamond and Pearl"]
 
 forbiddenMethods = ["Trade", "Event", "Poké Transfer", "Pokémon HOME", "Unobtainable", "Pokémon Home",
-"event", "Trade, Event", "", "Pokémon Bank"]
+"event", "Trade, Event", "Poké Transfer, Event", "", "Pokémon Bank", "Global Link Event", "Poké Pelago*"]
 
 data = pd.read_csv("PokemonCatchMethods.csv") 
 pokemonCatchMethodsPreProcessed = data.values.tolist()
@@ -19,12 +21,13 @@ pokemonCatchMethods = []
 for method in pokemonCatchMethodsPreProcessed:
     gameFlag = False
     for game in mainlineGames:
-        if(game in method[0]):
+        if(game == method[0]):
+            #print(game + " = " +method[0])
             gameFlag = True
 
     methodFlag = True
     for badMethod in forbiddenMethods:
-        if(badMethod == method[1].strip().rstrip(os.linesep)):
+        if(badMethod == method[1].rstrip(os.linesep).strip()):
             methodFlag = False
             
     if(gameFlag and methodFlag):
