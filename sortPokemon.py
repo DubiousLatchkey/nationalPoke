@@ -8,7 +8,7 @@ mainlineGames = ["Pokémon Sword", "Pokémon Shield", "Pokémon Ultra Sun", "Pok
  "Pokémon SoulSilver", "Pokémon Diamond", "Pokémon Pearl", "Pokémon Platinum"]
 
 forbiddenMethods = ["Trade", "Event", "Poké Transfer", "Pokémon HOME", "Unobtainable", "Pokémon Home",
-"event"]
+"event", "Trade, Event", "", "Pokémon Bank"]
 
 data = pd.read_csv("PokemonCatchMethods.csv") 
 pokemonCatchMethodsPreProcessed = data.values.tolist()
@@ -23,7 +23,7 @@ for method in pokemonCatchMethodsPreProcessed:
 
     methodFlag = True
     for badMethod in forbiddenMethods:
-        if(badMethod in method[0]):
+        if(badMethod == method[0]):
             methodFlag = False
             
     if(gameFlag and methodFlag):
