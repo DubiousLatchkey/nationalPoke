@@ -1,4 +1,3 @@
-from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 import requests
@@ -37,6 +36,15 @@ for i in range(len(pokemonNamesPre)):
 		del pokemonNumbers[i -deleted]
 		deleted += 1
 		
+def text_with_newlines(elem):
+    text = ''
+    for e in elem.descendants:
+        if isinstance(e, str):
+            text += e
+			
+        elif e.name == 'br' or e.name == 'p':
+            text += ', '
+    return text
 
 
 df = pd.DataFrame({"Pokemon Number":pokemonNumbers, "Pokemon Name":pokemonNames, "Pokemon Links":pokemonLinks})
@@ -57,11 +65,13 @@ for i in pokemonLinks:
 		if(type(j.find_previous_sibling("h3")) != type(None) and j.find_previous_sibling("h3").get_text() == "Game locations"):
 			for k in j.findAll("td"):
 				#print(str(k.get("class")))
-				if(str(k.get("class")) == "[u'roundy']"):
+				if(str(k.get("class")) == "['roundy']"):
 					#print(k.parent.parent.parent.parent.find("a").get("title"))
 					#print(k.get_text())
+					#print(text_with_newlines(k))
 					pokemonCatchGames.append(k.parent.parent.parent.parent.find("a").get("title"))
-					pokemonCatchMethods.append(k.get_text())
+					#pokemonCatchMethods.append(k.get_text())
+					pokemonCatchMethods.append(text_with_newlines(k))
 	
 					
 	dfTemp = pd.DataFrame({"Game to Catch in":pokemonCatchGames, "Catch Methods":pokemonCatchMethods})		
