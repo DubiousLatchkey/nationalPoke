@@ -1,56 +1,56 @@
-Location
-Aquacorde Town
-Kalos Route 2
-Santalune Forest
-Kalos Route 3
-Santalune City
-Kalos Route 4
-Lumiose City
-Kalos Route 14
-Laverre City
-Poké Ball Factory
-Kalos Route 15
-Lost Hotel
-Kalos Route 16
-Dendemille Town
-Frost Cavern
-Kalos Route 17
-Anistar City
-Kalos Route 18
-Terminus Cave
-Couriway Town
-Kalos Route 19
-Snowbelle City
-Kalos Route 21
-Victory Road (Kalos)
-Kalos Route 22
-Chamber of Emptiness
-Pokémon League (Kalos)
-Kalos Route 20
-Pokémon Village
-Kalos Route 13
-Coumarine City
-Kalos Route 12
-Azure Bay
-Shalour City
-Tower of Mastery
-Reflection Cave
-Kalos Route 11
-Geosenge Town
-Team Flare Secret HQ
-Kalos Route 10
-Cyllage City
-Connecting Cave
-Kalos Route 7
-Kalos Route 6
-Parfum Palace
-Camphrier Town
-Kalos Route 5
-Berry fields (Kalos)
-Kalos Route 8
-Ambrette Town
-Kalos Route 9
-Glittering Cave
-Kalos Power Plant
-Kalos Route 1
-Vaniville Town
+Location,Connected Locations
+Aquacorde Town,"['Route 2', 'Route 1']"
+Kalos Route 2,"['Santalune Forest', 'Aquacorde Town']"
+Santalune Forest,"['Route 2', 'Route 3']"
+Kalos Route 3,"['Santalune City', 'Santalune Forest']"
+Santalune City,"['Route 4', 'Route 22', 'Route 3']"
+Kalos Route 4,"['Lumiose City', 'Santalune City']"
+Lumiose City,"['Route 14', 'Route 13', 'Route 16', 'Route 4', 'Route 5']"
+Kalos Route 14,"['Laverre City', 'Lumiose City']"
+Laverre City,"['Poké Ball Factory', 'Route 15', 'Route 14']"
+Poké Ball Factory,['Laverre City']
+Kalos Route 15,"['Lost Hotel', 'Laverre City', 'Dendemille Town', 'Route 16']"
+Lost Hotel,"['15', '16']"
+Kalos Route 16,"['Route 15', 'Lost Hotel', 'Lumiose City']"
+Dendemille Town,"['Frost Cavern', 'Route 15', 'Route 17']"
+Frost Cavern,['Dendemille Town']
+Kalos Route 17,"['Dendemille Town', 'Anistar City']"
+Anistar City,"['Route 17', 'Route 18']"
+Kalos Route 18,"['Anistar City', 'Terminus Cave', 'Couriway Town']"
+Terminus Cave,['Route 18']
+Couriway Town,"['Route 18', 'Route 19']"
+Kalos Route 19,"['Couriway Town', 'Snowbelle City']"
+Snowbelle City,"['Route 21', 'Route 19', 'Route 20']"
+Kalos Route 21,"['Victory Road', 'Snowbelle City']"
+Victory Road (Kalos),"['Route 22', 'Route 21', 'Pokémon League']"
+Kalos Route 22,"['Santalune City', 'Victory Road', 'Chamber of Emptiness']"
+Chamber of Emptiness,['Route 22']
+Pokémon League (Kalos),['Victory Road']
+Kalos Route 20,"['Pokémon Village', 'Snowbelle City']"
+Pokémon Village,['Route 20']
+Kalos Route 13,"['Coumarine City', 'Kalos Power Plant', 'Lumiose City']"
+Coumarine City,"['Route 12', 'Route 13']"
+Kalos Route 12,"['Azure Bay', 'Shalour City', 'Coumarine City']"
+Azure Bay,['Route 12']
+Shalour City,"['Tower of Mastery', 'Route 12', 'Reflection Cave']"
+Tower of Mastery,['Shalour City']
+Reflection Cave,"['Route 11', 'Shalour City']"
+Kalos Route 11,"['Reflection Cave', 'Geosenge Town']"
+Geosenge Town,"['Team Flare Secret HQ', 'Route 11', 'Route 10']"
+Team Flare Secret HQ,['Geosenge Town']
+Kalos Route 10,"['Geosenge Town', 'Cyllage City']"
+Cyllage City,"['Route 10', 'Connecting Cave', 'Route 8']"
+Connecting Cave,"['Route 7', 'Route 8', 'Cyllage City']"
+Kalos Route 7,"['Route 6', 'Connecting Cave', 'Camphrier Town', 'Berry fields']"
+Kalos Route 6,"['Parfum Palace', 'Route 7']"
+Parfum Palace,['Route 6']
+Camphrier Town,"['Route 7', 'Route 5']"
+Kalos Route 5,"['Camphrier Town', 'Lumiose City']"
+Berry fields (Kalos),['Route 7']
+Kalos Route 8,"['Cyllage City', 'Connecting Cave', 'Ambrette Town']"
+Ambrette Town,"['Route 8', 'Route 9']"
+Kalos Route 9,"['Glittering Cave', 'Ambrette Town']"
+Glittering Cave,['Route 9']
+Kalos Power Plant,['Route 13']
+Kalos Route 1,"['Aquacorde Town', 'Vaniville Town']"
+Vaniville Town,['Route 1']

@@ -156,12 +156,16 @@ getLocations(url, 0, 6)
 #Save to file
 regionNames = ["Kalos"]
 locationNames = []
+connectingLocations = []
 names = []
 rates = []
 for i in regions[0]:
     if(i == None): 
         continue
     locationNames.append(i.name)
+
+    connectingLocations.append(str(i.connectedLocations))
+
     for pokemon in i.listOfPokemon:
         names.append(pokemon.name)
         rates.append(pokemon.rate)
@@ -170,7 +174,7 @@ for i in regions[0]:
     names.clear()
     rates.clear()
 
-regionDf = pd.DataFrame({"Location":locationNames})
+regionDf = pd.DataFrame({"Location":locationNames, "Connected Locations": connectingLocations})
 regionDf.to_csv(regionNames[0] +"/"+regionNames[0] +".csv", index = False, encoding = "utf-8")
 
 #root.mainloop()
