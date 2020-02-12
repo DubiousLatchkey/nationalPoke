@@ -7,11 +7,7 @@ import urllib3.request
 root = Tk()
 
 class Location:
-    #name = ""
-    #url = ""
-    #connectedLocations = []
-    #locationLinks = []
-    #listOfPokemon = []
+
     def __init__(self, name, pokemon):
         self.name = name
         self.url = ""
@@ -29,18 +25,12 @@ class PokemonAtLocation:
         self.name = name
         self.rate = rate
 
-class Region:
-    locations = []
-
-    def floodFillVisualize():
-        print("This is fine")
-
 
 #initialize
 root.title("Pokedex")
 myLabel = Label(root, text="Kalos")
 myLabel.grid()
-
+'''
 #Read in pokes
 data = pd.read_csv("NationalPokedexCatchMethods.csv")
 pokemonCatchMethods = data.values.tolist()
@@ -51,7 +41,7 @@ for method in pokemonCatchMethods:
     pokemonNames.append(method[0])
     pokemonGames.append(method[1])
     catchMethods.append(method[2])
-
+'''
 regions = [[] for i in range(5)]
 
 def text_with_processing(elem):
@@ -162,10 +152,25 @@ def getLocations(url, region, generation):
 #Get all links
 url = "https://bulbapedia.bulbagarden.net/wiki/Aquacorde_Town"
 getLocations(url, 0, 6)
-for i in regions[0]:
-    if(i != None):
-        print(i.name)
-#Save to file maybe?
 
+#Save to file
+regionNames = ["Kalos"]
+locationNames = []
+names = []
+rates = []
+for i in regions[0]:
+    if(i == None): 
+        continue
+    locationNames.append(i.name)
+    for pokemon in i.listOfPokemon:
+        names.append(pokemon.name)
+        rates.append(pokemon.rate)
+    pokemonDf = pd.DataFrame({"Pokemon Name":names, "Appearance Rate":rates})
+    pokemonDf.to_csv(regionNames[0] +"/" + i.name +".csv", index = False, encoding = "utf-8")
+    names.clear()
+    rates.clear()
+
+regionDf = pd.DataFrame({"Location":locationNames})
+regionDf.to_csv(regionNames[0] +"/"+regionNames[0] +".csv", index = False, encoding = "utf-8")
 
 #root.mainloop()
